@@ -1619,7 +1619,9 @@ const mainHTML = `<!DOCTYPE html>
   <meta name="description" content="تعلم المحاسبة المالية من الصفر إلى الاحتراف - دروس شاملة ومساقات متنوعة مع فيديوهات تعليمية واختبارات تفاعلية ومعجم محاسبي وآلة حاسبة محاسبية">
   <meta name="keywords" content="محاسبة, محاسبة مالية, تعلم المحاسبة, قوائم مالية, IFRS, CPA, SOCPA, محاسبة تكاليف, محاسبة إدارية, مراجعة وتدقيق, محاسبة ضريبية">
   <meta property="og:title" content="أكاديمية المحاسبة المالية">
-  <meta property="og:description" content="تعلم المحاسبة من الصفر إلى الاحتراف مع 8 مساقات و30+ درس وفيديوهات تعليمية">
+  <meta property="og:description" content="تعلم المحاسبة من الصفر إلى الاحتراف مع 8 مساقات و36+ درس وفيديوهات تعليمية واختبارات تفاعلية">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#059669">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -1628,27 +1630,27 @@ const mainHTML = `<!DOCTYPE html>
       theme: { extend: { fontFamily: { sans: ['Tajawal', 'sans-serif'] } } }
     }
   </script>
-  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/style.css">
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 font-sans transition-colors duration-300">
+<body class="bg-gray-50 dark:bg-slate-900 font-sans transition-colors duration-300">
   <!-- Top Navigation -->
-  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl shadow-sm border-b border-gray-200 dark:border-gray-700">
+  <nav class="sticky top-0 z-50 bg-white/92 dark:bg-slate-800/92 backdrop-blur-xl shadow-sm border-b border-gray-200/80 dark:border-slate-700/50">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-3 cursor-pointer" onclick="showHome()">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-lg shadow-lg">
+      <div class="flex items-center gap-3 cursor-pointer group" onclick="showHome()">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-lg shadow-lg group-hover:scale-105 transition-transform">
           <i class="fas fa-graduation-cap"></i>
         </div>
         <div>
-          <h1 class="text-lg font-bold text-gray-800 dark:text-white leading-tight">أكاديمية المحاسبة</h1>
-          <p class="text-xs text-gray-500 dark:text-gray-400">من الصفر إلى الاحتراف</p>
+          <h1 class="text-base sm:text-lg font-extrabold text-gray-800 dark:text-white leading-tight">أكاديمية المحاسبة</h1>
+          <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">من الصفر إلى الاحتراف</p>
         </div>
       </div>
-      <div class="flex items-center gap-2">
-        <button onclick="showSection('search')" class="nav-btn" title="بحث"><i class="fas fa-search"></i></button>
-        <button onclick="showSection('glossary')" class="nav-btn" title="المعجم"><i class="fas fa-book"></i></button>
-        <button onclick="showSection('calculator')" class="nav-btn" title="الآلة الحاسبة"><i class="fas fa-calculator"></i></button>
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <button onclick="showSection('search')" class="nav-btn" title="بحث (/)"><i class="fas fa-search"></i></button>
+        <button onclick="showSection('glossary')" class="nav-btn hidden sm:flex" title="المعجم"><i class="fas fa-book"></i></button>
+        <button onclick="showSection('calculator')" class="nav-btn hidden sm:flex" title="الآلة الحاسبة"><i class="fas fa-calculator"></i></button>
         <button onclick="toggleProgress()" class="nav-btn" title="تقدمي"><i class="fas fa-chart-pie"></i></button>
         <button onclick="toggleDarkMode()" class="nav-btn" title="الوضع الداكن"><i class="fas fa-moon" id="darkModeIcon"></i></button>
       </div>
@@ -1658,17 +1660,68 @@ const mainHTML = `<!DOCTYPE html>
   <!-- Main Content -->
   <main id="mainContent" class="max-w-7xl mx-auto px-4 py-6"></main>
 
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3><i class="fas fa-graduation-cap ml-2"></i>أكاديمية المحاسبة المالية</h3>
+        <p>منصة تعليمية عربية شاملة لتعلم المحاسبة المالية من الصفر إلى الاحتراف. نوفر محتوى تعليمي غني ومتنوع يشمل الفيديوهات والاختبارات والأدوات الحسابية.</p>
+        <div class="footer-social">
+          <a href="#" title="تويتر"><i class="fab fa-twitter"></i></a>
+          <a href="#" title="يوتيوب"><i class="fab fa-youtube"></i></a>
+          <a href="#" title="لينكدإن"><i class="fab fa-linkedin"></i></a>
+          <a href="#" title="تلغرام"><i class="fab fa-telegram"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>المساقات</h4>
+        <ul>
+          <li><a href="javascript:void(0)" onclick="showHome()"><i class="fas fa-chevron-left"></i>المستوى المبتدئ</a></li>
+          <li><a href="javascript:void(0)" onclick="showHome()"><i class="fas fa-chevron-left"></i>المستوى المتوسط</a></li>
+          <li><a href="javascript:void(0)" onclick="showHome()"><i class="fas fa-chevron-left"></i>المستوى المتقدم</a></li>
+          <li><a href="javascript:void(0)" onclick="showHome()"><i class="fas fa-chevron-left"></i>محاسبة التكاليف</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>المزيد</h4>
+        <ul>
+          <li><a href="javascript:void(0)" onclick="showHome()"><i class="fas fa-chevron-left"></i>المحاسبة الإدارية</a></li>
+          <li><a href="javascript:void(0)" onclick="showHome()"><i class="fas fa-chevron-left"></i>المراجعة والتدقيق</a></li>
+          <li><a href="javascript:void(0)" onclick="showHome()"><i class="fas fa-chevron-left"></i>المحاسبة الضريبية</a></li>
+          <li><a href="javascript:void(0)" onclick="showHome()"><i class="fas fa-chevron-left"></i>المستوى الاحترافي</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>أدوات</h4>
+        <ul>
+          <li><a href="javascript:void(0)" onclick="showSection('glossary')"><i class="fas fa-chevron-left"></i>المعجم المحاسبي</a></li>
+          <li><a href="javascript:void(0)" onclick="showSection('calculator')"><i class="fas fa-chevron-left"></i>الآلة الحاسبة</a></li>
+          <li><a href="javascript:void(0)" onclick="showSection('search')"><i class="fas fa-chevron-left"></i>البحث الشامل</a></li>
+          <li><a href="javascript:void(0)" onclick="showSection('about')"><i class="fas fa-chevron-left"></i>عن الأكاديمية</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>أكاديمية المحاسبة المالية</span> &copy; ${new Date().getFullYear()} - جميع الحقوق محفوظة
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTopBtn" class="scroll-top-btn" title="العودة للأعلى">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
   <!-- Progress Modal -->
   <div id="progressModal" class="modal-overlay hidden">
     <div class="modal-content">
       <div class="flex justify-between items-center mb-4">
-        <h3 class="text-xl font-bold dark:text-white"><i class="fas fa-chart-pie text-emerald-500 ml-2"></i>تقدمي</h3>
-        <button onclick="toggleProgress()" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+        <h3 class="text-xl font-extrabold dark:text-white"><i class="fas fa-chart-pie text-emerald-500 ml-2"></i>تقدمي في الدورة</h3>
+        <button onclick="toggleProgress()" class="w-8 h-8 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-gray-600 hover:bg-gray-200 transition text-lg">&times;</button>
       </div>
       <div id="progressContent"></div>
-      <div class="mt-4 flex gap-2">
-        <button onclick="exportProgress()" class="flex-1 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition text-sm"><i class="fas fa-download ml-1"></i>تصدير</button>
-        <button onclick="resetProgress()" class="flex-1 bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition text-sm"><i class="fas fa-trash ml-1"></i>إعادة تعيين</button>
+      <div class="mt-5 flex gap-2">
+        <button onclick="exportProgress()" class="flex-1 bg-blue-500 text-white py-2.5 rounded-xl hover:bg-blue-600 transition text-sm font-bold"><i class="fas fa-download ml-1"></i>تصدير التقدم</button>
+        <button onclick="resetProgress()" class="flex-1 bg-red-500 text-white py-2.5 rounded-xl hover:bg-red-600 transition text-sm font-bold"><i class="fas fa-trash ml-1"></i>إعادة تعيين</button>
       </div>
     </div>
   </div>
