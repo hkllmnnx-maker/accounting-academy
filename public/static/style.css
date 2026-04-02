@@ -294,7 +294,7 @@ body { font-family: 'Tajawal', sans-serif; line-height: 1.7; }
 .dark .info-box.red { background: #7f1d1d20; }
 .dark .info-box.yellow { background: #713f1220; }
 .dark .info-box.teal { background: #134e4a20; }
-.dark .info-box.pink { background: #831843;20; }
+.dark .info-box.pink { background: #83184320; }
 
 /* === Tables === */
 .table-container { overflow-x: auto; margin: 1rem 0; border-radius: var(--radius-md); border: 1px solid #e5e7eb; }
@@ -900,3 +900,47 @@ body { font-family: 'Tajawal', sans-serif; line-height: 1.7; }
   .section-header h2 { font-size: 1.1rem; }
   .scroll-top-btn { bottom: 1rem; left: 1rem; width: 42px; height: 42px; }
 }
+
+/* ============================================
+   AUTH STYLES
+   ============================================ */
+.auth-login-btn {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 8px 16px; border-radius: var(--radius-sm); border: none;
+  background: linear-gradient(135deg, #059669, #0d9488); color: white;
+  font-weight: 700; font-size: 0.85rem; cursor: pointer;
+  font-family: 'Tajawal', sans-serif; transition: var(--transition);
+  white-space: nowrap;
+}
+.auth-login-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+.auth-user-btn {
+  cursor: pointer; transition: var(--transition);
+}
+.auth-user-btn:hover { transform: scale(1.05); }
+.auth-avatar {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: linear-gradient(135deg, #059669, #0d9488);
+  color: white; display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 0.95rem;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+}
+
+.auth-input {
+  width: 100%; padding: 12px 16px; border: 2px solid #e5e7eb;
+  border-radius: var(--radius-md); margin-bottom: 10px;
+  font-family: 'Tajawal', sans-serif; font-size: 0.95rem;
+  background: #f8fafc; transition: var(--transition);
+  outline: none;
+}
+.dark .auth-input { background: #0f172a; border-color: #334155; color: #e2e8f0; }
+.auth-input:focus { border-color: #10b981; box-shadow: 0 0 0 3px rgba(16,185,129,0.1); }
+
+.auth-submit-btn {
+  width: 100%; padding: 12px; border: none; border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #059669, #0d9488); color: white;
+  font-weight: 700; cursor: pointer; font-family: 'Tajawal', sans-serif;
+  font-size: 1rem; transition: var(--transition); margin-top: 6px;
+}
+.auth-submit-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+.auth-submit-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
